@@ -1,0 +1,24 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: address-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/e-auction
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      preferIpAddress: true
+
+
