@@ -5,6 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Bid {
+
     @Id
-    private String Id;
+    private String bidId;
 }
