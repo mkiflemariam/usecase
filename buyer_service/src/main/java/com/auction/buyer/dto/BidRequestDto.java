@@ -11,6 +11,6 @@ public class BidRequestDto {
 
     private String name;
     private String email;
-    private String mobile;
+    private String phone;
     private BigDecimal amount;
 }

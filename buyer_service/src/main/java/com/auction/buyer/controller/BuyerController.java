@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping("/e-aution/api/buyer")
 public class BuyerController {
@@ -27,7 +29,7 @@ public class BuyerController {
     }
 
     @PutMapping("/update-bid/{productId}/{buyerEmail}/{newBidAmount}")
-    public ResponseEntity<?> updateBidAmount(@PathVariable String productId, @PathVariable String buyerEmail, @PathVariable String newBidAmount ){
+    public ResponseEntity<?> updateBidAmount(@PathVariable String productId, @PathVariable String buyerEmail, @PathVariable BigDecimal newBidAmount ){
         return new ResponseEntity<ProductResponseDto>(buyerService.updateBidAmount(productId,buyerEmail,newBidAmount), HttpStatus.OK);
     }
 }
