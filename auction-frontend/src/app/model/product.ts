@@ -1,7 +1,6 @@
 export class Product {
     productId!: string;
-
     productName!:string;
-   quantity!:number;
+    quantity!:number;
     description!:string;
 }

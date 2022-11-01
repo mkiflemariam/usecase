@@ -1,45 +1,25 @@
-<div>
-    <h1>Fetch Detail</h1>
-</div>
+
 
 <form >
     <label for="product">Products</label>
-    <select name="product" id="product">
-      <option value="Product1">Product1</option>
-      <option value="Product2">Product1</option>
-      <option value="Product3">Product1</option>
-      <option value="Product4">Product1</option>
-      
+    <select name="product" id="product" class="form-control">
+      <option *ngFor="let prod of products"  [value]="prod.productId">{{prod.productName}}</option>
     </select>
   
     <button>Get</button>
   </form>
-<div><label>Short Description: <span> product description</span></label></div>
-  
- <div class="row">
-    <div class="col"><label for="product-name">Product Name</label></div>
-    <div class="col"><label for="product-name">Product Name</label></div>
-
- </div>
- <div class="row">
-    <div class="col"><label for="short-desc">Short description</label></div>
-    <div class="col"><label for="short-desc">Short description</label></div>
- </div>
- <div class="row">
-    <div class="col"><label for="detail-desc">Detail description</label></div>
-    <div class="col"><label for="detail-desc">Detail description</label></div>
- </div>
- <div class="row">
-    <div class="col"><label for="category">Category</label></div>
-    <div class="col"><label for="category">Category</label></div>
- </div>
- <div class="row">
-    <div class="col"><label for="starting-price">Starting Price</label></div>
-    <div class="col"><label for="starting-price">Starting Price</label></div>
- </div>
- <div class="row">
-    <div class="col"><label for="starting-price">Bid End Date</label></div>
-    <div class="col"><label for="starting-price">Bid End Date</label></div>
-   
-  </div>
  
+  <mat-grid-list cols="2" rowWidth="60px" rowHeight="20px">
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Product Name</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">item 2</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Short description</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Item 4</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Detail description</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Item 6</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Category</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Item 8</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Starting Price</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Item 10</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Bid End Date</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">12</mat-grid-tile>
+  </mat-grid-list>
