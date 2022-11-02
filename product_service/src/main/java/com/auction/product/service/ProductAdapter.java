@@ -13,7 +13,6 @@ public class ProductAdapter {
     public static Product productRequestDtoToProduct(ProductRequestDTO productRequestDTO) {
 
         Product product = Product.builder()
-                .productId("" + counter++)
                 .productName(productRequestDTO.getProductName())
                 .shortDescription(productRequestDTO.getShortDescription())
                 .detailDescription(productRequestDTO.getDetailDescription())
@@ -36,6 +35,7 @@ public class ProductAdapter {
                 .bidEndDate(product.getBidEndDate())
                 .bidIdList(product.getBid())
                 .build();
+
         return productResponse;
     }
 }

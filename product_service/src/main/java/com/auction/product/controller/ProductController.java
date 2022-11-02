@@ -6,9 +6,7 @@ import com.auction.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductController {
@@ -16,11 +14,15 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping
+    @PostMapping("/products")
     public ResponseEntity<?> createProduct(@RequestBody ProductRequestDTO productRequestDTO){
+        ProductResponse productResponse = productService.createProduct(productRequestDTO);
+        return new ResponseEntity<ProductResponse>(productResponse, HttpStatus.CREATED);
+    }
 
-        ProductResponse product = productService.createProduct(productRequestDTO);
-        return new ResponseEntity<>(product, HttpStatus.CREATED);
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getProductById(@PathVariable int id){
+        return new ResponseEntity<ProductResponse>(productService.getProductById(id), HttpStatus.OK);
     }
 
 }
