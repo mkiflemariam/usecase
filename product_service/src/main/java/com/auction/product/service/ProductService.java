@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class ProductService {
 
@@ -28,5 +31,17 @@ public class ProductService {
     public ProductResponse getProductById(int id) {
         ProductResponse productResponse=ProductAdapter.productToProductRespose(productRepository.findById(id).get());
         return productResponse;
+    }
+
+    public List<ProductResponse> getAllProducts() {
+        List<Product> productList = productRepository.findAll();
+        List<ProductResponse> productResponses = new ArrayList<>();
+        if(productList.isEmpty()){
+
+        }
+        for(Product p : productList){
+            productResponses.add(ProductAdapter.productToProductRespose(p));
+        }
+        return productResponses;
     }
 }
