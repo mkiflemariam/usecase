@@ -17,7 +17,7 @@ public class ProductAdapter {
                 .shortDescription(productRequestDTO.getShortDescription())
                 .detailDescription(productRequestDTO.getDetailDescription())
                 .category(productRequestDTO.getCategory())
-                .startingPrice(productRequestDTO.getStartingPrice())
+                .startingPrice(productRequestDTO.getBidAmount())
                 .bidEndDate(productRequestDTO.getBidEndDate())
                 .bid(productRequestDTO.getBid())
                 .build();
@@ -27,6 +27,7 @@ public class ProductAdapter {
     public static ProductResponse productToProductRespose(Product product) {
 
         ProductResponse productResponse = ProductResponse.builder()
+                .productId(product.getProductId())
                 .productName(product.getProductName())
                 .shortDescription(product.getShortDescription())
                 .detailDescription(product.getDetailDescription())

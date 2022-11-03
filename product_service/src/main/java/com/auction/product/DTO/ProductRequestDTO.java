@@ -20,7 +20,7 @@ public class ProductRequestDTO {
     private String shortDescription;
     private String detailDescription;
     private String category;
-    private BigDecimal startingPrice;
+    private BigDecimal bidAmount;
     private Date bidEndDate;
     private List<String> bid;
 }

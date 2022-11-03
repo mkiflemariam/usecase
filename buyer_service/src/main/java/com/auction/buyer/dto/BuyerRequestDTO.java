@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -31,6 +32,7 @@ public class BuyerRequestDTO {
     @Size(min = 10, max = 10, message = "phone number should be 10 character long")
     private String phone;
     private String productId;
+    private BigDecimal bidAmount;
     private String addressId;
-     private BidRequestDTO bidRequestDTO;
+    //private BidRequestDTO bidRequestDTO;
 }

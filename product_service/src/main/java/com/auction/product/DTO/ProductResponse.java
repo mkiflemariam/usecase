@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class ProductResponse {
+    private Integer productId;
     private String productName;
     private String shortDescription;
     private String detailDescription;
