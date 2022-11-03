@@ -5,13 +5,8 @@ import com.auction.bid.dto.SellerRequestDTO;
 import com.auction.bid.dto.SellerResponseDTO;
 import com.auction.bid.entity.Seller;
 import com.auction.bid.repository.SellerRepository;
-import com.auction.bid.request.CreateSellerRequest;
-import com.auction.bid.response.Product;
-import com.auction.bid.response.SellerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -26,13 +21,14 @@ public class SellerService {
 
 	public SellerResponseDTO createSeller(SellerRequestDTO sellerRequestDTO) {
 		Seller seller = SellerAdapter.sellerRequestDtoToSeller(sellerRequestDTO);
+		System.out.println(seller);
 		SellerResponseDTO sellerResponseDTO = SellerAdapter.sellerToSellerResponseDto(sellerRepository.save(seller));
 		return sellerResponseDTO;
 	}
 	
 
 
-	public SellerResponseDTO getSellerById(String id) {
+	public SellerResponseDTO getSellerById(int id) {
 		SellerResponseDTO sellerResponseDTO =SellerAdapter.sellerToSellerResponseDto(sellerRepository.findById(id).get());
 		return sellerResponseDTO;
 	}

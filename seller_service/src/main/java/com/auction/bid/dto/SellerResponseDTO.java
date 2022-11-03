@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class SellerResponseDTO {
-    private String sellerId;
+    private Integer sellerId;
     private String firstName;
     private String lastName;
     private String email;

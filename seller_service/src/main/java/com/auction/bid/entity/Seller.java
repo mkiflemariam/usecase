@@ -1,24 +1,24 @@
 package com.auction.bid.entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
-@Setter
-@Getter
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
+@Entity
 public class Seller {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO )
-	private String sellerId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer sellerId;
 	private String firstName;
 	private String lastName;
 	private String email;

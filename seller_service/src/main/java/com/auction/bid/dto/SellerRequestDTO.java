@@ -1,6 +1,5 @@
 package com.auction.bid.dto;
 
-import com.auction.bid.request.CreateProductRequest;
 import lombok.Builder;
 import lombok.Data;
 

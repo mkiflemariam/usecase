@@ -26,7 +26,7 @@ public class SellerController {
 
 		
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getSellerById (@PathVariable String id) {
+	public ResponseEntity<?> getSellerById (@PathVariable int id) {
 
 		return new ResponseEntity<SellerResponseDTO>(sellerService.getSellerById(id), HttpStatus.OK);
 	}
