@@ -1,6 +1,11 @@
 export class Product {
-    productId!: string;
-    productName!:string;
-    quantity!:number;
-    description!:string;
+     productId! : Number;  
+     productName!: string;
+     shortDescription!:string;
+     detailDescription!:string;
+     category!:string;
+     startingPrice!:bigint;
+     bidEndDate!:Date;
+     bid!:string[];
+       
 }

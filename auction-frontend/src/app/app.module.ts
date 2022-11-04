@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { ProductlistComponent } from './components/productlist/productlist.component';
 import { BidlistComponent } from './components/bidlist/bidlist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BidlistComponent
   ],
   imports: [
-    BrowserModule,MatDividerModule,MatGridListModule,MatToolbarModule, BrowserAnimationsModule
+    BrowserModule,FormsModule, HttpClientModule,MatDividerModule,MatGridListModule,MatToolbarModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
