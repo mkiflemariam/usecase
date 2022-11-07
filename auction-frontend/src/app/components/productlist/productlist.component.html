@@ -1,29 +1,78 @@
+<div class = "card ">
+<div class="card-header text-center">
 
-
-
-<form >
-    <label for="product">Products</label>
-    <select name="product" id="product" class="form-control" [(ngModel)]="selectedProduct" (ngModelChange)="onChange($event)" >
-      <option *ngFor="let prod of products"  [value]="prod">{{prod.productName}}</option>
+  <form >
+    <label >Products</label>
+    <select name="product" id="product"  [(ngModel)]="selectedProduct" (ngModelChange)="onChange($event)" >
+      <option *ngFor="let prod of products"  [value]="prod.productId">{{prod.productName}}</option>
     </select>
   
-    <button (click)="getButtonClick()">Get</button>
+    <button (click)="getButtonClick()" class="btn btn-primary">Get</button>
   </form>
-  <p>{{product.productName}}</p>
- <p>{{selectedProduct}}</p>
- 
-  <mat-grid-list cols="2" rowWidth="60px" rowHeight="20px">
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Product Name</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.productName}}</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Short description</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.shortDescription}}</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Detail description</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.detailDescription}}</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Category</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.category}}</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Starting Price</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.startingPrice}}</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">Bid End Date</mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'grey'">{{product.bidEndDate}}</mat-grid-tile>
-  </mat-grid-list>
+  </div>
+
+ <div className="card-body text-center">
+
+
+
+<div>
+  <form>
+
+   
+    <div class="row mb-3">
+      
+      <label  class="col-sm-2 col-form-label shadow-sm w-20 bg-light rounded">Product Name:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.productName}}</label>
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+    
+      <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">Short Description:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.shortDescription}}</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">Detailed Description:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.detailDescription}}</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">Category:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.category}}</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">Starting Price:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.startingPrice}}</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">Bind End Date:</label>
+      <div class="col-sm-10">
+        <label  class="col-sm-2 col-form-label shadow-sm   bg-light rounded">{{product.bidEndDate}}</label>
+      </div>
+    </div>
+    </form>
+ </div>
+</div>
+    
+</div>
+  
+  <h1>Bids</h1>
+
+  <app-bidlist *ngFor="let bid of bids" [bid]="bid"></app-bidlist>
+  <table>
+    <thead>
+        <th>Bid Amount</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    </thead>
+</table>
   

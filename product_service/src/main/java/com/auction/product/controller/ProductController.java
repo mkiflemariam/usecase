@@ -1,7 +1,7 @@
 package com.auction.product.controller;
 
 import com.auction.product.DTO.ProductRequestDTO;
-import com.auction.product.DTO.ProductResponse;
+import com.auction.product.DTO.ProductResponseDTO;
 import com.auction.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,21 +20,22 @@ public class ProductController {
 
     @PostMapping("/products")
     public ResponseEntity<?> createProduct(@RequestBody ProductRequestDTO productRequestDTO){
-        ProductResponse productResponse = productService.createProduct(productRequestDTO);
-        return new ResponseEntity<ProductResponse>(productResponse, HttpStatus.CREATED);
+        ProductResponseDTO productResponseDTO = productService.createProduct(productRequestDTO);
+        return new ResponseEntity<ProductResponseDTO>(productResponseDTO, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getProductById(@PathVariable int id){
-        return new ResponseEntity<ProductResponse>(productService.getProductById(id), HttpStatus.OK);
+        return new ResponseEntity<ProductResponseDTO>(productService.getProductById(id), HttpStatus.OK);
     }
 
     @GetMapping
     public ResponseEntity<?>  getAllProducts(){
-        List<ProductResponse> productResponses = productService.getAllProducts();
+        List<ProductResponseDTO> productResponsDTOS = productService.getAllProducts();
 
-        return new ResponseEntity<Collection<ProductResponse>>(productResponses, HttpStatus.OK);
+        return new ResponseEntity<Collection<ProductResponseDTO>>(productResponsDTOS, HttpStatus.OK);
     }
+
 
 
 

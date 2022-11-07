@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Bid } from 'src/app/model/bid';
 
 @Component({
   selector: 'app-bidlist',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidlistComponent implements OnInit {
 
+  @Input() bid!:Bid;
   constructor() { }
 
   ngOnInit(): void {

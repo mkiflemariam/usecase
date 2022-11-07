@@ -1,20 +1,24 @@
-package com.auction.product.DTO;
-
+package com.auction.bid.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-@Builder
+@Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class ProductResponse {
+@Builder
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer productId;
     private String productName;
     private String shortDescription;
@@ -22,5 +26,8 @@ public class ProductResponse {
     private String category;
     private BigDecimal startingPrice;
     private Date bidEndDate;
-    private List<String> bidIdList;
+
+    @ElementCollection
+    private List<String> bid;
+
 }

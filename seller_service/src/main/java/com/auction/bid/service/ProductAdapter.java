@@ -1,8 +1,9 @@
-package com.auction.product.service;
+package com.auction.bid.service;
 
-import com.auction.product.DTO.ProductRequestDTO;
-import com.auction.product.DTO.ProductResponseDTO;
-import com.auction.product.domain.Product;
+
+import com.auction.bid.dto.ProductRequestDTO;
+import com.auction.bid.dto.ProductResponseDTO;
+import com.auction.bid.entity.Product;
 
 public class ProductAdapter {
     private static int counter = 0;
