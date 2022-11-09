@@ -28,13 +28,13 @@ public class ProductService {
 
     public ProductResponse createProduct(CreateProductRequest createProductRequest) {
         Product product = new Product();
-        product.(createProductRequest.getName());
+        product.setProductName(createProductRequest.getName());
         product.setShortDescription(createProductRequest.getShortDescription());
         product.setDetailDescription(createProductRequest.getDetailDescription());
         product.setCategory(createProductRequest.getCategory());
         product.setBidEndDate(createProductRequest.getBidEndDate()); //exception
         product.setStartingPrice(createProductRequest.getStartingPrice());
-        logger.info("before saving the product");
+
         product = productRepository.save(product);
 
         ProductResponse productResponse = new ProductResponse(product);
@@ -45,13 +45,13 @@ public class ProductService {
     public ProductResponse getById(String id) {
         Product product = productRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Product", "id", 0));
         ProductResponse productResponse = new ProductResponse(product);
-        //productResponse.setBidIdList(product.getBids());
+
         return productResponse;
 
     }
     public Product findById(String id) {
         Product product = productRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Product", "id", 0));
-        //ProductResponse productResponse = new ProductResponse(product);
+
         return product;
 
     }
