@@ -8,7 +8,7 @@ import { Bid } from 'src/app/model/bid';
 })
 export class BidlistComponent implements OnInit {
 
-  @Input() bid!:Bid;
+  @Input() bid2!:Bid[];
   constructor() { }
 
   ngOnInit(): void {

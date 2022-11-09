@@ -13,6 +13,7 @@ import java.util.Collection;
 
 
 @RestController
+@RequestMapping("sellers")
 public class SellerController {
 
 	@Autowired

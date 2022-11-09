@@ -13,18 +13,19 @@ import java.util.List;
 
 @CrossOrigin("*")
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/products")
+    @PostMapping
     public ResponseEntity<?> createProduct(@RequestBody ProductRequestDTO productRequestDTO){
         ProductResponseDTO productResponseDTO = productService.createProduct(productRequestDTO);
         return new ResponseEntity<ProductResponseDTO>(productResponseDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<?> getProductById(@PathVariable int id){
         return new ResponseEntity<ProductResponseDTO>(productService.getProductById(id), HttpStatus.OK);
     }

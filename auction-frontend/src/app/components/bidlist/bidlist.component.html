@@ -1,10 +1,22 @@
-<table>
-    <tr>
-        <td>{{bid.amount}}</td>
-        <td>{{bid.name}}</td>
-        <td>{{bid.email}}</td>
-        <td>{{bid.mobile}}</td>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th>Bid Amount</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
     </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor ="let bid of bid2">
+        <th scope="col">{{bid.amount}}</th>
+            <th scope="col">{{bid.name}}</th>
+                <th scope="col">{{bid.email}}</th>
+                    <th scope="col">{{bid.mobile}}</th>
+    </tr>
+    </tbody>
 </table>
 
 

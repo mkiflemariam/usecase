@@ -1,3 +1,4 @@
+<div class="mx-auto" style="width: 1200px;">
 <div class = "card ">
 <div class="card-header text-center">
 
@@ -11,7 +12,7 @@
   </form>
   </div>
 
- <div className="card-body text-center">
+ <div className="card-body">
 
 
 
@@ -64,15 +65,8 @@
     
 </div>
   
-  <h1>Bids</h1>
+  <h1 class="text-center">Bids</h1>
 
-  <app-bidlist *ngFor="let bid of bids" [bid]="bid"></app-bidlist>
-  <table>
-    <thead>
-        <th>Bid Amount</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Mobile</th>
-    </thead>
-</table>
-  
+<!-- <app-bidlist *ngFor="let bid of bids" [bid]="bid"></app-bidlist> -->
+<app-bidlist  [bid2]="bids"></app-bidlist>
+</div>

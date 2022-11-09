@@ -22,8 +22,8 @@ public class SellerService {
 	@Autowired
 	SellerRepository sellerRepository;
 
-	@Autowired
-	FeignServiceUtil feignServiceUtil;
+//	@Autowired
+//	FeignServiceUtil feignServiceUtil;
 
 	public SellerResponseDTO createSeller(SellerRequestDTO sellerRequestDTO) {
 		Seller seller = SellerAdapter.sellerRequestDtoToSeller(sellerRequestDTO);
