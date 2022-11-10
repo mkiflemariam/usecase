@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @EnableEurekaClient
-
+@EnableFeignClients
 public class ProductApplication {
 
 	public static void main(String[] args) {

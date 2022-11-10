@@ -50,7 +50,7 @@ public class ProductController {
 
 
     @PutMapping("/{productId}/add-bid")
-    public ResponseEntity<ProductResponse> addBid2Product(@PathVariable String productId, @RequestBody BidRequest bidRequest) {
+    public ResponseEntity<ProductResponse> addBidToProduct(@PathVariable String productId, @RequestBody BidRequest bidRequest) {
 
         return new ResponseEntity<>(productService.addBidToProduct(productId, bidRequest), HttpStatus.OK);
     }

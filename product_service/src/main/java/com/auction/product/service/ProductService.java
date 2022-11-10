@@ -79,7 +79,7 @@ public class ProductService {
 
 
             if(bidResponse!=null) {
-                product.setBid(bidResponse.);
+                product.setBid(bidResponse.getBidId());
             }
 
             product = productRepository.save(product);
